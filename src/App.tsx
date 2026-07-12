@@ -19,7 +19,7 @@ export default function App() {
   const [role, setRole] = useState<'student' | 'teacher'>('student');
   const [userName, setUserName] = useState('');
   const [studentNo, setStudentNo] = useState<string | undefined>(undefined);
-  const [classId, setClassId] = useState('class-1');
+  const [classId, setClassId] = useState('class-2');
 
   const [currentTab, setCurrentTab] = useState<SidebarTab>('dashboard');
   const [observations, setObservations] = useState<Observation[]>([]);

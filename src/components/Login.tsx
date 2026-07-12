@@ -8,14 +8,13 @@ interface LoginProps {
 
 export default function Login({ onLogin }: LoginProps) {
   const [role, setRole] = useState<'student' | 'teacher'>('student');
-  const [classId, setClassId] = useState('class-1');
+  const [classId, setClassId] = useState('class-2');
   const [studentNo, setStudentNo] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState(''); // Added password state
 
   // Demode login values for quick grading & testing
   const classes = [
-    { id: 'class-1', name: '3학년 1반' },
     { id: 'class-2', name: '3학년 2반' }
   ];
 

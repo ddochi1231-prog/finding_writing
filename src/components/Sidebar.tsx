@@ -132,7 +132,7 @@ export default function Sidebar({
               {role === 'student' ? `${userName} 어린이` : `${userName} 선생님`}
             </h3>
             <p className="text-[10px] text-[#528d69] font-bold mt-0.5">
-              {role === 'student' ? `${classId === 'class-1' ? '3학년 1반' : '3학년 2반'} ${studentNo}번` : '선생님 포털 포트폴리오'}
+              {role === 'student' ? `3학년 2반 ${studentNo}번` : '선생님 포털 포트폴리오'}
             </p>
             <p className="text-[10px] text-amber-600 font-extrabold mt-1">
               {role === 'student' ? getLevelName(observationCount) : '지도 교사'}
