@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Observation": {
+      "title": "Observation",
+      "description": "Diary entry for a student's observation.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "studentName": { "type": "string", "maxLength": 100 },
+        "studentNo": { "type": "string", "maxLength": 10 },
+        "classId": { "type": "string", "maxLength": 20 },
+        "category": { "type": "string" },
+        "title": { "type": "string", "maxLength": 200 },
+        "date": { "type": "string", "format": "date" },
+        "weather": { "type": "string" },
+        "description": { "type": "string", "maxLength": 2000 },
+        "tags": { "type": "array" },
+        "drawing": { "type": "string" }
+      },
+      "required": ["id", "studentName", "classId", "category", "title", "date", "description"]
+    }
+  },
+  "firestore": {
+    "/observations/{observationId}": {
+      "schema": "Observation",
+      "description": "Collection of all student observations."
+    }
+  }
+}

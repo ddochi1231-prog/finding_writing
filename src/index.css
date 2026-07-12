@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Single+Day&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Gowun Dodum", "Pretendard", sans-serif;
+  --font-display: "Single Day", cursive;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f4fbf7;
+  color: #2a4735;
+}
+
+/* 아기자기한 테두리와 입체적인 그림자 스타일 */
+.bubbly-border {
+  border: 4px solid #c2ebd1;
+}
+
+.bubbly-shadow {
+  box-shadow: 4px 4px 0px 0px #87d3a1;
+}
+
+.bubbly-shadow-orange {
+  box-shadow: 4px 4px 0px 0px #fbc089;
+}
+
+.bubbly-shadow-blue {
+  box-shadow: 4px 4px 0px 0px #97c2fc;
+}
+
+.bubbly-shadow-purple {
+  box-shadow: 4px 4px 0px 0px #c4b0fc;
+}
+
+.bubbly-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #87d3a1;
+}
+
+/* 둥글둥글 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4fbf7;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2ebd1;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9bdcb3;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "쑥쑥 관찰일지",
+  "description": "초등학생들이 식물, 곤충, 날씨를 관찰하고 기록하며 배지를 모으는 아기자기한 관찰일지 서랍장입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

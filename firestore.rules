@@ -1,0 +1,34 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helpers
+    function isSignedIn() { return request.auth != null; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    function isValidObservation(data) {
+      return data.studentName is string && data.studentName.size() <= 100 &&
+             data.studentName.size() > 0 &&
+             data.studentNo is string && data.studentNo.size() <= 10 &&
+             data.classId is string && data.classId.size() <= 20 &&
+             data.category is string &&
+             data.title is string && data.title.size() <= 200 &&
+             data.date is string &&
+             data.weather is string &&
+             data.description is string && data.description.size() <= 2000;
+    }
+
+    match /observations/{observationId} {
+      allow get: if isSignedIn() && existing().studentName == request.auth.token.name;
+      allow list: if isSignedIn() && resource.data.studentName == request.auth.token.name;
+      allow create: if isSignedIn() && isValidId(observationId) && isValidObservation(incoming()) && incoming().studentName == request.auth.token.name && incoming().keys().hasAll(['studentName', 'studentNo', 'classId', 'category', 'title', 'date', 'description']) && incoming().keys().size() <= 11;
+      allow update: if isSignedIn() && isValidObservation(incoming()) && existing().studentName == request.auth.token.name && incoming().studentName == existing().studentName && incoming().diff(existing()).affectedKeys().hasOnly(['category', 'title', 'weather', 'description', 'tags', 'drawing']);
+      allow delete: if isSignedIn() && existing().studentName == request.auth.token.name;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
