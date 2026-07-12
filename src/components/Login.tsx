@@ -36,7 +36,7 @@ export default function Login({ onLogin }: LoginProps) {
         alert('선생님 성함을 적어주세요! 🍎');
         return;
       }
-      if (password !== 'admin123') { // Simple password check
+      if (password !== '3267') { // Simple password check
         alert('비밀번호가 올바르지 않습니다.');
         return;
       }
