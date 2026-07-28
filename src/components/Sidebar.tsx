@@ -49,7 +49,7 @@ export default function Sidebar({
   };
 
   return (
-    <aside className="w-full md:w-64 bg-[#e8f5ed] flex flex-col justify-between p-6 h-screen border-r-4 border-[#c2ebd1] shrink-0">
+      <aside className="w-full md:w-64 bg-[#e8f5ed] flex flex-col justify-between p-6 md:h-screen border-r-4 border-[#c2ebd1] shrink-0">
       {/* Upper Logo Section */}
       <div className="space-y-8">
         <div className="flex items-center gap-3 p-2 bg-white rounded-2xl bubbly-shadow border-2 border-[#87d3a1]">
