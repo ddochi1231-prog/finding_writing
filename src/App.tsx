@@ -291,7 +291,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row h-screen w-full bg-[#f4fbf7] overflow-hidden antialiased">
+        <div className="flex flex-col md:flex-row min-h-screen md:h-screen w-full bg-[#f4fbf7] md:overflow-hidden antialiased">
       {/* Sidebar navigation */}
       <Sidebar
         role={role}
